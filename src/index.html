@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class= "header-container">
+            <div class="header-block"></div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container-main container">
+            <div class="main-block">
+                <div class="main-block__first">
+                    <div class="rectagle"></div>
+                    <div class="rectagle"></div>
+                    <div class="rectagle"></div>
+                    <div class="rectagle"></div>
+                </div>
+                <div class="main-block__second">
+                    <div class="rectagle"></div>
+                    <div class="rectagle"></div>
+                    <div class="rectagle"></div>
+                    <div class="rectagle"></div>
+                </div>
+            </div>
+            <div class="main-block__mobile">
+                <div class="rectagle_mobile"></div>
+                <div class="rectagle_mobile"></div>
+            </div>
+            
+            <div class="main-block__big">
+                <div class="big-rectagle"></div>
+            </div>
+            <hr>
+            
+            <!-- COmments -->
+            <div class="comment-header">
+                <div class="header-comment__container container">
+                    <p class="text">Комментарии &nbsp(80)</p>
+                    <div class="menu">
+                            <div class="svg" id="svgContainer">
+                                <p class="text-second">По количеству оценок </p>
+                                <svg id="rotateSvg" xmlns="http://www.w3.org/2000/svg" width="18" height="15" viewBox="0 0 18 15" fill="none">
+                                    <path opacity="0.4" d="M9 15L17.6603 0H0.339746L9 15Z" fill="black"/>
+                                    </svg>
+                            </div>
+                            
+                       
+                        
+                            <div class="submenu">
+                                <div class="submenu-list">
+                                        <div class="submenu-item" id="clickableText" onclick="toggleMenuItem(0)">
+                                            <img src="/src/img/галка.png" class="jackdaw checkbox" id="checkboxImage" >По дате </div>
+                                        <div class="submenu-item" id="clickableText1"  onclick="toggleMenuItem(1)">
+                                            <img src="/src/img/галка.png" class="jackdaw checkbox active" id="checkboxImage1"  >По количеству оценок</div>
+                                        <div class="submenu-item" id="clickableText2" onclick="toggleMenuItemx(2)">
+                                            <img src="/src/img/галка.png" class="jackdaw checkbox" id="checkboxImage2">По актуальности
+                                        </div>
+                                    <div class="submenu-item" id="clickableText3"  onclick="toggleMenuItem(3)">
+                                        <img src="/src/img/галка.png" class="jackdaw checkbox  " id="checkboxImage3">По количеству ответов</div>
+                                    </div>
+                            </div>
+                            <div class="btn__mobile">
+                                <button  class="favouritesBtn" id="favouritesBtn" onclick="toggleFavorite()">Избранное 
+                                </button>
+                                <img src="/src/icon/hr.svg">
+        
+                            </div>
+                            
+                    </div>
+                        <div class="btn__favort">
+                            <button  class="favouritesBtn" id="favouritesBtn" onclick="toggleFavorite()">Избранное 
+                            </button>
+                            <img src="/src/icon/hr.svg">
+                        </div>
+                       
+                   
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="comment-body commnet-body__container">
+            <div class=" container">
+                <div class="user">
+                    <img src="/src/img/12.jpg" alt="User Avatar" class="user-avatar">
+                    <p class="user-name"> Максим Авдеенко</p>
+                    <p class="max-sim">Макс.1000 символов</p>
+                    <p class="limitation" id="limitation">Слишком длинное сообщение</p>
+                </div>
+             
+                
+            </div>
+            <div class="comments-container">
+                <form id="commentForm" class="commentForm">
+                    
+                    <input id="messageInput" type="text" placeholder="Введите текст сообщения...">
+                    
+            
+                </form>
+                <div class="btn" >
+                    <button type="submit" id="btn" disabled>Отправить</button>
+                </div>
+            </div>
+
+            <!-- First commnet -->
+            <div class="first-commnet">
+                <div class="container first-container">
+                    <div class="first-user">
+                        <img src="/src/img/Mask group.png" alt="User Avatar" class="user-avatar">
+                        <p class="user-name__first"> Алексей_1994b</p>
+                        <p class="data">15.01 13:55</p>
+                    </div>
+                    <div class="commnets">
+                    
+                        <p class="first-commnets">Самое обидное когда сценарий по сути есть - в виде книг, где нет сюжетных дыр, всё логично, стройное повествование и достаточно взять и экранизировать оригинал как это было в первых фильмах с минимальным количеством отсебятины и зритель с восторгом примет любой такой фильм и сериал, однако вместо этого 'Кольца власти' просто позаимствовали имена из оригинала, куски истории, мало связанные между собой и выдали очередной среднячковый сериал на один раз в лучшем случае.</p>
+                        <div class="icon-text">
+                            <div class="comment-btn">
+                                <img src="/src/icon/arrow-gray.svg"  class="arrow">
+                                <button class="answer" onclick="toggleReplyInput(this)">Ответить</button>
+                                    <div class="reply-input" style = "display: none;">
+                                         <input type="text" class="reply-text" placeholder="Ответить на комментария...">
+                                            <button  class="btn-answer" onclick="addReply(this)">Отправить ответ</button>
+                                    </div>
+                                    <div class="replies"></div>
+                            </div>
+                            
+                            <img src="/src/icon/heart-white.svg"  class="heart" id="heart-white">
+                            <img src="/src/icon/gray-heart.svg"  class="heart-gray" id="heart-gray">
+                            <button class="favourites" id="favourites" onclick="toggleFavorite(0)" >В избранное</button>
+                            <div class="rating " id="rating">
+                                <img src="/src/icon/minus.svg"  class="eclipse-minus" onclick="decrementRating()">
+                            <p class="number__first rating-value" id="ratingValue1">0</p>
+                            <img src="/src/icon/plus.svg" class="eclipse-pluse" onclick="incrementRating()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subcommittee">
+                <div class="subcommitte-user">
+                    <img src="/src/img/man.png" alt="User Avatar" class="user-avatar">
+                    
+                    <p class="user-name__first">Джунбокс3000</p>
+                    <div class="user-name__mobile">
+                        <img src="/src/icon/arrow-gray.svg"  class="arrow__first">
+                    <p class="subcommittee-answer">Алексей_1994b</p>
+                    </div>
+                    <div class="subcommitteeArrowData">
+                        <img src="/src/icon/arrow-gray.svg"  class="arrow__first">
+                        <p class="subcommittee-answer">Алексей_1994b</p>
+                    </div>
+                    
+                    <p class="data">15.01 15:18</p>
+                </div>
+                <div class="commnets">
+                    <p class="subcommittee-text">Наверное, самая большая ошибка создателей сериала была в том, что они поставили уж слишком много надежд на поддержку фанатов вселенной. Как оказалось на деле, большинство 'фанатов' с самой настоящей яростью и желчью стали уничтожать сериал, при этом объективности в отзывах самый минимум.</p>
+                </div>
+                <div class="icon-text__first">
+                    <img src="/src/icon/heart-white.svg"  class="heart" id="heart-white1">
+                    <img src="/src/icon/gray-heart.svg"  class="heart-gray1" id="heart-gray1">
+                    <button class="favourites" id="favourites1" onclick="toggleFavorite(1)" >В избранное</button>
+                    <div class="rating">
+                        <img src="/src/icon/minus.svg"  class="eclipse-minus" onclick="decrementRating(this)">
+                    <p class="number__two rating-value" >0</p>
+                    <img src="/src/icon/plus.svg" class="eclipse-pluse" onclick="incrementRating(this)">
+                    </div>
+                    
+                    
+                </div>
+
+
+                <div class="subcomitte-user__answer">
+                    <div class="user-name__two">
+                        <img src="/src/img/Душнила.png" alt="User Avatar" class="user-avatar">
+                        <p class="answer-name">Мистер_душнила</p>
+                        <div class="user-name__mobile">
+                            <img src="/src/icon/arrow-gray.svg"  class="arrow__first">
+                        <p class="subcommittee-answer">Алексей_1994b</p>
+                        </div>
+                        <div class="subcommitteeArrowData">
+                            <img src="/src/icon/arrow-gray.svg"  class="arrow__first">
+                            <p class="subcommittee-answer">Алексей_1994b</p>
+                        </div>
+                        <p class="data">11.02 15:02</p>
+                    </div>
+
+                    <div class="commnets">
+                        <p class="subcommittee-text">Какую-то дичь несешь, братиш!</p>
+                    </div>
+
+                    <div class="icon-text__first">
+                        <img src="/src/icon/heart-white.svg"  class="heart" id="heart-white2">
+                        <img src="/src/icon/gray-heart.svg"  class="heart-gray1" id="heart-gray2">
+                        <button class="favourites" id="favourites2" onclick="toggleFavorite(2)" >В избранное</button>
+                        <div class="rating">
+                            <img src="/src/icon/minus.svg"  class="eclipse-minus" onclick="decrementRating()">
+                        <p class="number__two rating-value" >0</p>
+                        <img src="/src/icon/plus.svg" class="eclipse-pluse" onclick="incrementRating()">
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+            
+        </div>
+        
+
+       
+    </main>
+    
+    <script src="/src/js/main.js"></script>
+</body>
+</html>
